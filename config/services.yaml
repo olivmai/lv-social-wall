@@ -23,5 +23,9 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    app.twitter.api_utility:
+        class: App\TwitterApi\TwitterApiUtility
+        arguments: ['%env(TWITTER_API_CONSUMER_KEY)%', '%env(TWITTER_API_CONSUMER_KEY_SECRET)%', '%env(TWITTER_API_TOKEN_ACCESS)%', '%env(TWITTER_API_TOKEN_ACCESS_SECRET)%', '@doctrine.orm.default_entity_manager']
+
+    App\Manager\TweetManager:
+        arguments: ['@doctrine.orm.default_entity_manager', '@app.twitter.api_utility', '%kernel.environment%']

@@ -1,0 +1,13 @@
+header.main-header {
+    background-color: #333;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.main-header #header-logo a {
+    color: #fff;
+}
+
+.content {
+    box-shadow: #333 0px 2px 5px;
+}

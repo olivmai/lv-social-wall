@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#play-container {
+    display: flex;
+}
+.play-section {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+#game-container {
+    width: 70%;
+    background-color: #90c7ea;
+    position: relative;
+}
+#game-container #lv-logo {
+    max-width: 300px;
+    margin: 35px 0 0 35px;
+}
+#game-container p {
+    margin-top: 35px;
+    text-align: center;
+    display: flex;
+    min-height: 650px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+}
+#feed-container {
+    width: 30%;
+    background-color: #e1eef3;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    color: #90c7ea;
+    font-family: Arial;
+    font-size: 3em;
+    margin-bottom: -20px;
+}
+.twitter-icon {
+    text-align: center;
+    color: #f4f9fb;
+}
+.twitter-icon svg {
+    width: 60%;
+}
+#tweet-feed {
+    z-index: 9999;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+.tweet-card {
+    min-width: 90%;
+    padding: 15px 15px 5px 15px;
+    background-color: #FFF;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: Arial;
+}
+.tweet-card h4 {
+    padding-top: 0px;
+    font-size: 25px;
+    position: relative;
+    top: -25px;
+    color: #90c6ea;
+    height: 20px;
+    margin-bottom: 0;
+}
+.tweet-card img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+    max-width: 50px;
+}
+.tweet-card p {
+    color: #333;
+    font-size: 14px;
+}
+.goody-img-container {
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 200px;
+    text-align: center;
+}
+.goody-img-container.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
