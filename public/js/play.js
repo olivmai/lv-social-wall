@@ -1,6 +1,7 @@
 $(function () {
     const es = new EventSource('http://localhost:3000/.well-known/mercure?topic=lv-social-wall');
-    var displayedTweets = [];
+    var displayedTweets = getDisplayedTweets();
+    console.log(displayedTweets);
     es.onmessage = e => {
         console.log(e);
         var tweetContainer = $('#tweet-feed');
@@ -9,14 +10,33 @@ $(function () {
         tweetContainer.prepend(tweetTemplate);
         var tweet = $('#tweet'+data.lastTweetId);
         displayedTweets.push(tweet);
+        console.log(displayedTweets);
         animateTweet(tweet);
+        updateTweetList();
+        console.log(displayedTweets);
+        animateGoody(data.goody, data.img);
+    };
+
+    function updateTweetList() {
         if (displayedTweets.length > 5) {
+            console.log('more than 5 tweets in list');
             var tweetToRemove = displayedTweets[0];
+            console.log(tweetToRemove);
             tweetToRemove.hide();
             displayedTweets.shift();
         }
-        animateGoody(data.goody, data.img);
-    };
+    }
+
+    function getDisplayedTweets()
+    {
+        var tweets = [];
+        $('.tweet-card').each(function (i, tweet) {
+            var tweetToPush = $('#'+tweet.id);
+            tweets.push(tweetToPush);
+        });
+
+        return tweets;
+    }
 
     function createTweetCard(data)
     {

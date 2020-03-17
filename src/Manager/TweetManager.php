@@ -104,12 +104,12 @@ class TweetManager
      */
     public function getLastTweet(Event $event)
     {
-        if ("dev" === $this->env) {
+        /*if ("dev" === $this->env) {
             $tweet = TweetFactory::fake($event);
             $this->entityManager->persist($tweet);
             $this->entityManager->flush();
             return $tweet;
-        }
+        }*/
 
         // get last tweet since tweet id from Twitter API
         /** @var Tweet $lastTweetInDb */
@@ -130,9 +130,9 @@ class TweetManager
         $tweet = $this->registerTweetInfo($event, $lastTweet->statuses[0]);
 
         // if tweet author is not following, register it in db but don't return it
-        if (false === $lastTweet->statuses[0]->user->following) {
+        /*if (false === $lastTweet->statuses[0]->user->following) {
             return null;
-        }
+        }*/
 
         // send private message to player
         //$this->sendPrivateMessage($twitterDirecteMessage);

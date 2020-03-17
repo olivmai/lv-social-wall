@@ -79,6 +79,11 @@ class GetLastTweetCommand extends Command
         /** @var Tweet $lastTweet */
         $lastTweet = $this->tweetManager->getLastTweet($event);
 
+        if (!$lastTweet) {
+            $io->warning('No tweet found');
+            die();
+        }
+
         // pick the goody the user won
         $goody = $this->socialWallUtility->pickAGoody($event);
 
