@@ -1,2 +1,10 @@
-<a href="{{ path('connect_google') }}">Connect with Google</a>
-<a href="{{ path('connect_lvconnect') }}">LV Connect</a>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="login-container" >
+    <img src="{{ asset('images/logo-lv.svg') }}" alt="logo">
+    <p>
+        <a class="btn btn-lg btn-primary" href="{{ path('connect_linkvalue_start') }}">LOG IN</a>
+    </p>
+</div>
+{% endblock %}
