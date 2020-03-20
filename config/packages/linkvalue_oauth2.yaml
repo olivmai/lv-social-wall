@@ -1,0 +1,5 @@
+linkvalue_oauth2:
+  client_id: '%env(resolve:OAUTH_LINKVALUE_APP_ID)%'
+  client_secret: '%env(resolve:OAUTH_LINKVALUE_APP_SECRET)%'
+  redirect_uri: '%env(resolve:OAUTH_LINKVALUE_REDIRECT_URL)%'
+  scopes: '%env(resolve:OAUTH_LINKVALUE_SCOPE)%'

@@ -16,14 +16,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="app_homepage")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function indexAction(Request $request)
     {
-        $events = $this->getDoctrine()->getRepository(Event::class)->findAll();
-        return $this->render('base.html.twig');
+        dump($this->getUser());
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('login');
+        }
+
+        return $this->redirectToRoute('easyadmin');
     }
 
     /**
