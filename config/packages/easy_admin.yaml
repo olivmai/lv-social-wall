@@ -4,8 +4,12 @@ easy_admin:
     brand_color: '#03A9F4'
     assets:
       css:
+        - 'bundles/flatpickr/flatpickr.min.css'
+        - 'bundles/flatpickr/themes/material_blue.css'
         - 'css/easy_admin.css'
       js:
+        - 'bundles/flatpickr/flatpickr.min.js'
+        - 'bundles/flatpickr/l10n/fr.js'
         - 'js/easy_admin.js'
   list:
     collapse_actions: true
@@ -20,15 +24,16 @@ easy_admin:
       form:
         fields:
           - { property: 'name' }
-          - { property: 'startDate' }
-          - { property: 'endDate', type_options: { required: false } }
+          - { property: 'startDate', type_options: {'widget': 'single_text', 'attr': {'class': 'custom-datepicker'}} }
+          - { property: 'endDate', type_options: { required: false, 'widget': 'single_text', 'attr': {'class': 'custom-datepicker hidden'}} }
           - { property: 'location' }
           - { property: 'hashtags'}
           - { property: 'imageFile', type: 'vich_image' }
           - { property: 'callToAction' }
           - { property: 'directMessageData', label: 'DM Twitter' }
           - { property: 'bigPrize' }
-          - { property: 'drawTime', label: 'Heure du tirage au sort' }
+#          - { property: 'drawTime', label: 'Heure du tirage au sort' }
+          - { property: 'drawTime', label: 'Heure du tirage au sort', type_options: {'widget': 'single_text', 'attr': {'class': 'custom-datepicker'}} }
       list:
         actions:
           - { name: 'play_event', type: 'route', icon: 'gamepad' }

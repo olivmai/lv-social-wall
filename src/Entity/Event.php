@@ -84,7 +84,7 @@ class Event
 
     /**
      * @var \DateTime
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime")
      */
     private $drawTime;
 
@@ -291,7 +291,7 @@ class Event
     /**
      * @return \DateTime
      */
-    public function getDrawTime(): \DateTime
+    public function getDrawTime(): ?\DateTime
     {
         return $this->drawTime;
     }

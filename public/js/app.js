@@ -6,8 +6,14 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-require('../css/app.scss');
+// require('../css/app.scss');
+// import 'flatpickr';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
-// import $ from 'jquery';
-require('bootstrap');
+//const $ = require('jquery');
+//global.$ = global.jQuery = $;
+// require('bootstrap');
+// const flatpickr = require("flatpickr");
+// flatpickr(".custom-datepicker");
+
+//$(".custom-datepicker").flatpickr();
