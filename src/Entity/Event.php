@@ -82,6 +82,12 @@ class Event
      */
     private $directMessageData;
 
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $drawTime;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
@@ -280,5 +286,21 @@ class Event
             ->where(Criteria::expr()->gt('quantity', 0));
 
         return $this->goodies->matching($criteria);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDrawTime(): \DateTime
+    {
+        return $this->drawTime;
+    }
+
+    /**
+     * @param \DateTime $drawTime
+     */
+    public function setDrawTime(\DateTime $drawTime): void
+    {
+        $this->drawTime = $drawTime;
     }
 }

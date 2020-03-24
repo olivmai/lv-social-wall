@@ -27,8 +27,8 @@ easy_admin:
           - { property: 'imageFile', type: 'vich_image' }
           - { property: 'callToAction' }
           - { property: 'directMessageData', label: 'DM Twitter' }
-          - { property: 'goodies' }
-          - { property: 'bigPrize'}
+          - { property: 'bigPrize' }
+          - { property: 'drawTime', label: 'Heure du tirage au sort' }
       list:
         actions:
           - { name: 'play_event', type: 'route', icon: 'gamepad' }
