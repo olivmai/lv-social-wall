@@ -25,3 +25,4 @@ yarn-error.log
 ###> ide and os files ###
 .idea
 ###< ide and os files ###
+/.php_cs.cache
